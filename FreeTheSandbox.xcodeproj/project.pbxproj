@@ -280,6 +280,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.FreeTheSandbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -297,6 +298,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.FreeTheSandbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
