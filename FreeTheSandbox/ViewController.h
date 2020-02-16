@@ -8,8 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+#import "Instruments.h"
+#import "DeviceSourceItem.h"
 
+@interface ViewController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource>
 
+@property (atomic, retain) NSMutableArray<DeviceSourceItem*>*devices;
+@property (atomic, retain) Instruments *driver;
+
+@property(copy) NSString *title;
 @end
 
