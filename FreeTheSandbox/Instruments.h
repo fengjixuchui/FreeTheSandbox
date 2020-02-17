@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Instruments : NSObject
 - (NSArray <XRRemoteDevice*>*) devices;
+- (void) watch;
 @end
 
 NS_ASSUME_NONNULL_END

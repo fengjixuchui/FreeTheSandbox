@@ -25,4 +25,10 @@
     return devices;
 }
 
+- (void) watch {
+// TODO: watch for devices
+//    [XRDeviceDiscovery registerDeviceObserver:];
+//    [XRDeviceDiscovery startListeningForDevices];
+}
+
 @end

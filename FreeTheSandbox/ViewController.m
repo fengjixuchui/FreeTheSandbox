@@ -16,12 +16,15 @@
     __weak IBOutlet NSTableView *tableTasksView;
     
     TasksListDelegate *tasksDelegate;
+    NSTimer *tasksRefersh;
 }
 
 @synthesize deviceSource;
 @synthesize driver;
 @synthesize title;
 @synthesize device;
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -132,13 +135,20 @@
     NSIndexSet *selectedIndexes = [sourceListOutlineView selectedRowIndexes];
     if (selectedIndexes.count == 0) {
         detailPanel.hidden = YES;
+        [self->tasksRefersh invalidate];
+        self->tasksRefersh = nil;
         return;
     }
+
     detailPanel.hidden = NO;
     NSUInteger index = selectedIndexes.firstIndex - 1; // header
     
-    // todo: refresh
     self.device = (XRRemoteDevice*)self.devices[index];
+    self->tasksRefersh = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                          target:self
+                                                        selector:@selector(ps)
+                                                        userInfo:nil
+                                                         repeats:YES];
     [self ps];
 }
 
