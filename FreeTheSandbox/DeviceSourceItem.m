@@ -29,7 +29,7 @@
 }
 
 - (BOOL)hasIcon {
-    return icon!=nil;
+    return icon != nil;
 }
 
 - (NSString *)description {

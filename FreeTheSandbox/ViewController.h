@@ -13,8 +13,10 @@
 
 @interface ViewController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource>
 
-@property (atomic, retain) NSMutableArray<DeviceSourceItem*>*devices;
+@property (atomic, retain) NSMutableArray<DeviceSourceItem*>*deviceSource;
+@property (atomic, retain) NSMutableArray<XRDevice*>*devices;
 @property (atomic, retain) Instruments *driver;
+@property (atomic, retain) XRDevice *device;
 
 @property(copy) NSString *title;
 @end
