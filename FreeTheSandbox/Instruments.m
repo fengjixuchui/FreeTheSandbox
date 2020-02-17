@@ -11,6 +11,12 @@
 
 @implementation Instruments
 
+/*
+ * It's possible to port this shit to libimobiledevice
+ * https://github.com/libimobiledevice/libimobiledevice/issues/793
+ * https://github.com/troybowman/dtxmsg/blob/master/dtxmsg_client.cpp
+ */
+
 + (void)load {
     XRUniqueIssueAccumulator *responder = [XRUniqueIssueAccumulator new];
     XRPackageConflictErrorAccumulator *accumulator = [[XRPackageConflictErrorAccumulator alloc] initWithNextResponder:responder];
