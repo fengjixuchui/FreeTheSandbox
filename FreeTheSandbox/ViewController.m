@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Views/TasksListDelegate.h"
+#import "XRRemoteDevice+XRRemoteDevice_FileSystem.h"
 
 @implementation ViewController
 {
@@ -32,7 +33,12 @@
     self.driver = [Instruments new];
     self.deviceSource = [NSMutableArray new];
     self.devices = [NSMutableArray arrayWithArray:[driver devices]];
-
+    
+    XRRemoteDevice *dev = (XRRemoteDevice *)self.devices[0];
+    [dev listing:@"/" callback:^(NSArray *result) {
+        NSLog(@"%@", result);
+    }];
+    
     DeviceSourceItem *group = [DeviceSourceItem itemWithTitle:@"Devices" identifier:@"header" icon:nil];
     [self.deviceSource addObject:group];
     NSMutableArray<DeviceSourceItem*> *children = [NSMutableArray new];

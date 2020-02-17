@@ -815,7 +815,7 @@
                                                 <font key="font" metaFont="system"/>
                                                 <tabViewItems>
                                                     <tabViewItem label="Tasks" identifier="" id="Lcg-S8-88X">
-                                                        <view key="view" ambiguous="YES" id="mbM-Vv-w2s">
+                                                        <view key="view" id="mbM-Vv-w2s">
                                                             <rect key="frame" x="10" y="33" width="514" height="418"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -970,7 +970,7 @@
                                                         </view>
                                                     </tabViewItem>
                                                     <tabViewItem label="Files" identifier="" id="PN3-68-Up9">
-                                                        <view key="view" id="JJz-rB-CQW">
+                                                        <view key="view" ambiguous="YES" id="JJz-rB-CQW">
                                                             <rect key="frame" x="10" y="33" width="514" height="418"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </view>

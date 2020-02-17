@@ -7,6 +7,7 @@
 //
 
 #import "Instruments.h"
+#import "XRRemoteDevice+XRRemoteDevice_FileSystem.h"
 
 @implementation Instruments
 
@@ -29,6 +30,19 @@
 // TODO: watch for devices
 //    [XRDeviceDiscovery registerDeviceObserver:];
 //    [XRDeviceDiscovery startListeningForDevices];
+}
+
+@end
+
+@implementation XRRemoteDevice (FileSystem)
+
+- (void)listing:(NSString *)path callback:(void (^)(NSArray *))callback {
+    XRDevice *dev = self;
+    DTXChannel *channel = [dev deviceInfoService];
+    DTXMessage *msg = [DTXMessage messageWithSelector:NSSelectorFromString(@"directoryListingForPath:") objectArguments:@"/", nil];
+    [channel sendMessageSync:msg replyHandler:^(DTXMessage *response, int extra) {
+        callback(response.payloadObject);
+    }];
 }
 
 @end

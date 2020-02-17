@@ -34,13 +34,15 @@
 @end
 
 @interface DTXMessage : NSObject
-+ messageWithSelector:(SEL)sel objectArguments:(va_list)args;
+@property(copy, nonatomic) id payloadObject;
++ messageWithSelector:(SEL)sel objectArguments: (id)args, ...;
 @end
 
 
 @interface DTXChannel : NSObject
 - (void)receiveMobileAgent:(id)arg1;
 - (id)messageReplyTicketForControlMessage:(id)arg1 agent:(id)arg2;
+- (void)sendMessageSync:(id)arg1 replyHandler:(void (^)(id, int))handler;
 @end
 
 @interface DVTFilePath : NSObject <NSCopying, NSSecureCoding>
