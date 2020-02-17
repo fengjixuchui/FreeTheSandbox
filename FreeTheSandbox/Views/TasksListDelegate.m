@@ -36,15 +36,18 @@
 //
 //    }
     
+    if ([identifier isEqualToString:@"NameCell"]) {
+        NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
+        cellView.textField.stringValue = task.processName;
+        cellView.imageView.objectValue = task.image;
+        return cellView;
+    }
+    
     NSString *(^TextForCell)(NSString *cell) = ^NSString *(NSString *cell) {
-        if ([cell isEqualToString:@"MainCell"]) {
-            return task.displayName;
-        } else if ([cell isEqualToString:@"PathCell"]) {
+        if ([cell isEqualToString:@"PathCell"]) {
             return task.executablePath;
         } else if ([cell isEqualToString:@"PIDCell"]) {
             return [NSString stringWithFormat:@"%d", task.processIdentifier];
-        } else if ([cell isEqualToString:@"NameCell"]) {
-            return task.processName;
         }
         return nil;
     };

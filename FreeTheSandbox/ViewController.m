@@ -138,7 +138,15 @@
     NSUInteger index = selectedIndexes.firstIndex - 1; // header
     
     // todo: refresh
-    id device = self.devices[index];
+    self.device = (XRRemoteDevice*)self.devices[index];
+    [self ps];
+}
+
+- (void)setRepresentedObject:(id)representedObject {
+    [super setRepresentedObject:representedObject];
+}
+
+- (void) ps {
     // processes
     self->tasksDelegate = [[TasksListDelegate alloc]
                                         initWithTable:self->tableTasksView
@@ -148,8 +156,14 @@
     self->tableTasksView.dataSource = self->tasksDelegate;
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
+- (IBAction)onTerminateProcess:(id)sender {
+    id table = self->tableTasksView;
+    NSInteger row = [table rowForView:sender];
+    if (row != -1) {
+        PFTProcess *task = self->tasksDelegate.data[row];
+        [self.device terminateProcess:[NSNumber numberWithInt:task.processIdentifier]];
+        [self performSelector:@selector(ps) withObject:nil afterDelay:0.2];
+    }
 }
 
 @end

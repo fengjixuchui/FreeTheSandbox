@@ -67,14 +67,13 @@
 		9275106D23F99EEB0001FCEF /* FreeTheSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				9275109223FABFAB0001FCEF /* Models */,
 				9275108E23FA9E5B0001FCEF /* Views */,
 				9275108323FA55000001FCEF /* Classdump */,
 				9275106E23F99EEB0001FCEF /* AppDelegate.h */,
 				9275106F23F99EEB0001FCEF /* AppDelegate.m */,
 				9275107123F99EEB0001FCEF /* ViewController.h */,
 				9275107223F99EEB0001FCEF /* ViewController.m */,
-				9275108B23FA5D8C0001FCEF /* DeviceSourceItem.h */,
-				9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */,
 				9275107423F99EEE0001FCEF /* Assets.xcassets */,
 				9275107623F99EEE0001FCEF /* Main.storyboard */,
 				9275107923F99EEE0001FCEF /* Info.plist */,
@@ -101,6 +100,15 @@
 				9275109023FA9E6D0001FCEF /* TasksListDelegate.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9275109223FABFAB0001FCEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9275108B23FA5D8C0001FCEF /* DeviceSourceItem.h */,
+				9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

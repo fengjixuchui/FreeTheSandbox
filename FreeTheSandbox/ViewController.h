@@ -16,7 +16,7 @@
 @property (atomic, retain) NSMutableArray<DeviceSourceItem*>*deviceSource;
 @property (atomic, retain) NSMutableArray<XRDevice*>*devices;
 @property (atomic, retain) Instruments *driver;
-@property (atomic, retain) XRDevice *device;
+@property (atomic, retain) XRRemoteDevice *device;
 
 @property(copy) NSString *title;
 @end
