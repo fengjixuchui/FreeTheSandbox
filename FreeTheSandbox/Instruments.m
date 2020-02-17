@@ -39,7 +39,7 @@
 - (void)listing:(NSString *)path callback:(void (^)(NSArray *))callback {
     XRDevice *dev = self;
     DTXChannel *channel = [dev deviceInfoService];
-    DTXMessage *msg = [DTXMessage messageWithSelector:NSSelectorFromString(@"directoryListingForPath:") objectArguments:@"/", nil];
+    DTXMessage *msg = [DTXMessage messageWithSelector:NSSelectorFromString(@"directoryListingForPath:") objectArguments:path, nil];
     [channel sendMessageSync:msg replyHandler:^(DTXMessage *response, int extra) {
         callback(response.payloadObject);
     }];

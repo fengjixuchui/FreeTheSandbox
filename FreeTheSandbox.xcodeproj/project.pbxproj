@@ -15,6 +15,8 @@
 		9275108923FA55C40001FCEF /* Instruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275108823FA55C40001FCEF /* Instruments.m */; };
 		9275108D23FA5D8C0001FCEF /* DeviceSourceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */; };
 		9275109123FA9E6D0001FCEF /* TasksListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109023FA9E6D0001FCEF /* TasksListDelegate.m */; };
+		9275109623FAD13B0001FCEF /* FileSystemTreeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */; };
+		9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109823FAD1930001FCEF /* FileSystemItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,11 @@
 		9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceSourceItem.m; sourceTree = "<group>"; };
 		9275108F23FA9E6D0001FCEF /* TasksListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasksListDelegate.h; sourceTree = "<group>"; };
 		9275109023FA9E6D0001FCEF /* TasksListDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasksListDelegate.m; sourceTree = "<group>"; };
+		9275109323FACCF90001FCEF /* XRRemoteDevice+XRRemoteDevice_FileSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XRRemoteDevice+XRRemoteDevice_FileSystem.h"; sourceTree = "<group>"; };
+		9275109423FAD13B0001FCEF /* FileSystemTreeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemTreeDelegate.h; sourceTree = "<group>"; };
+		9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemTreeDelegate.m; sourceTree = "<group>"; };
+		9275109723FAD1930001FCEF /* FileSystemItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemItem.h; sourceTree = "<group>"; };
+		9275109823FAD1930001FCEF /* FileSystemItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,7 @@
 				9275107C23F99EEE0001FCEF /* FreeTheSandbox.entitlements */,
 				9275108723FA55C40001FCEF /* Instruments.h */,
 				9275108823FA55C40001FCEF /* Instruments.m */,
+				9275109323FACCF90001FCEF /* XRRemoteDevice+XRRemoteDevice_FileSystem.h */,
 			);
 			path = FreeTheSandbox;
 			sourceTree = "<group>";
@@ -98,6 +106,8 @@
 			children = (
 				9275108F23FA9E6D0001FCEF /* TasksListDelegate.h */,
 				9275109023FA9E6D0001FCEF /* TasksListDelegate.m */,
+				9275109423FAD13B0001FCEF /* FileSystemTreeDelegate.h */,
+				9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +117,8 @@
 			children = (
 				9275108B23FA5D8C0001FCEF /* DeviceSourceItem.h */,
 				9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */,
+				9275109723FAD1930001FCEF /* FileSystemItem.h */,
+				9275109823FAD1930001FCEF /* FileSystemItem.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,11 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9275108923FA55C40001FCEF /* Instruments.m in Sources */,
+				9275109623FAD13B0001FCEF /* FileSystemTreeDelegate.m in Sources */,
 				9275107323F99EEB0001FCEF /* ViewController.m in Sources */,
 				9275107B23F99EEE0001FCEF /* main.m in Sources */,
 				9275109123FA9E6D0001FCEF /* TasksListDelegate.m in Sources */,
 				9275108D23FA5D8C0001FCEF /* DeviceSourceItem.m in Sources */,
 				9275107023F99EEB0001FCEF /* AppDelegate.m in Sources */,
+				9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +350,8 @@
 					InstrumentsPlugIn,
 					"-framework",
 					DVTFoundation,
+					"-framework",
+					DTXConnectionServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.FreeTheSandbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,6 +382,8 @@
 					InstrumentsPlugIn,
 					"-framework",
 					DVTFoundation,
+					"-framework",
+					DTXConnectionServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.FreeTheSandbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,24 +8,30 @@
 
 #import "ViewController.h"
 #import "Views/TasksListDelegate.h"
-#import "XRRemoteDevice+XRRemoteDevice_FileSystem.h"
+#import "Views/FileSystemTreeDelegate.h"
 
 @implementation ViewController
 {
     __weak IBOutlet NSOutlineView *sourceListOutlineView;
     __weak IBOutlet NSTabView *detailPanel;
     __weak IBOutlet NSTableView *tableTasksView;
+    __weak IBOutlet NSOutlineView *fileSystemView;
     
     TasksListDelegate *tasksDelegate;
+    FileSystemTreeDelegate *filesDelegate;
+
     NSTimer *tasksRefersh;
 }
 
 @synthesize deviceSource;
 @synthesize driver;
-@synthesize title;
 @synthesize device;
 
-
+- (IBAction)onExpandFileTree:(id)sender {
+    // sender == self->fileSystemView
+    id selectedItem = [sender itemAtRow:[sender selectedRow]];
+    [self->filesDelegate expandItem:selectedItem];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,11 +39,6 @@
     self.driver = [Instruments new];
     self.deviceSource = [NSMutableArray new];
     self.devices = [NSMutableArray arrayWithArray:[driver devices]];
-    
-    XRRemoteDevice *dev = (XRRemoteDevice *)self.devices[0];
-    [dev listing:@"/" callback:^(NSArray *result) {
-        NSLog(@"%@", result);
-    }];
     
     DeviceSourceItem *group = [DeviceSourceItem itemWithTitle:@"Devices" identifier:@"header" icon:nil];
     [self.deviceSource addObject:group];
@@ -50,8 +51,7 @@
 
     sourceListOutlineView.delegate = self;
     sourceListOutlineView.dataSource = self;
-    
-    self.title = @"#FreeTheSandbox";
+
     detailPanel.hidden = YES;
     [self performSelector:@selector(expandSourceList) withObject:nil afterDelay:0.0];
 }
@@ -92,7 +92,6 @@
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
-    //Making the Source List Items Non Editable
     return NO;
 }
 
@@ -116,7 +115,9 @@
 
 }
 
-- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+- (NSView *)outlineView:(NSOutlineView *)outlineView
+     viewForTableColumn:(NSTableColumn *)tableColumn
+                   item:(id)item {
     NSTableCellView *view = nil;
     if ([[item identifier] isEqualToString:@"header"]) {
         view = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
@@ -156,10 +157,21 @@
                                                         userInfo:nil
                                                          repeats:YES];
     [self ps];
+    [self ls];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
+}
+
+- (void) ls {
+    self->filesDelegate = [[FileSystemTreeDelegate alloc]
+                           initWithOutline:self->fileSystemView
+                           device:self.device
+                           controller:self];
+
+    self->fileSystemView.delegate = self->filesDelegate;
+    self->fileSystemView.dataSource = self->filesDelegate;
 }
 
 - (void) ps {

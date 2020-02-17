@@ -18,6 +18,5 @@
 @property (atomic, retain) Instruments *driver;
 @property (atomic, retain) XRRemoteDevice *device;
 
-@property(copy) NSString *title;
 @end
 

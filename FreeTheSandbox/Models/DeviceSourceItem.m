@@ -28,10 +28,6 @@
     return [children count] > 0;
 }
 
-- (BOOL)hasIcon {
-    return icon != nil;
-}
-
 - (NSString *)description {
     return [NSString stringWithFormat:@"<%@ title=%@ identifier=%@ %p>",
             [self class], title, identifier, &self];

@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)itemWithTitle:(NSString*)title identifier:(NSString*)identifier icon:(nullable NSImage*)icon;
 
 - (BOOL)hasChildren;
-- (BOOL)hasIcon;
 
 @end
 
