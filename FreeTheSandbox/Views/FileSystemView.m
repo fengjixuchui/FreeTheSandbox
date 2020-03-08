@@ -129,7 +129,6 @@
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     id selectedItem = [self itemAtRow:[self selectedRow]];
-    NSLog(@"%@", selectedItem);
     [self expandItem:selectedItem];
 }
 
