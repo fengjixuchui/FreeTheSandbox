@@ -12,7 +12,6 @@
 
 @implementation ViewController
 {
-    __weak IBOutlet NSOutlineView *sourceListOutlineView;
     __weak IBOutlet NSTabView *detailPanel;
     __weak IBOutlet NSTableView *tableTasksView;
     __weak IBOutlet NSOutlineView *fileSystemView;
@@ -49,116 +48,31 @@
     }
     group.children = children;
 
-    sourceListOutlineView.delegate = self;
-    sourceListOutlineView.dataSource = self;
-
-    detailPanel.hidden = YES;
-    [self performSelector:@selector(expandSourceList) withObject:nil afterDelay:0.0];
+//    detailPanel.hidden = YES;
 }
 
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
-{
-    if (item == nil) {
-        return [self.deviceSource count];
-    } else {
-        return [[item children] count];
-    }
-}
-
-- (IBAction)expandSourceList
-{
-    [sourceListOutlineView expandItem:nil expandChildren:YES];
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
-{
-    return [item hasChildren];
-}
-
-#pragma mark OUTLINE VIEW DELEGATE & DATASOURCE
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
-{
-    if (item == nil) {
-        return [self.deviceSource objectAtIndex:index];
-    } else {
-        return [[item children] objectAtIndex:index];
-    }
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
-{
-    return [item title];
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
-{
-    return NO;
-}
-
-- (NSCell *)outlineView:(NSOutlineView *)outlineView dataCellForTableColumn:(NSTableColumn *)tableColumn item:(id)item
-{
-    NSInteger row = [outlineView rowForItem:item];
-    return [tableColumn dataCellForRow:row];
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
-{
-    if ([[item identifier] isEqualToString:@"header"])
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-    return NO;
-
-}
-
-- (NSView *)outlineView:(NSOutlineView *)outlineView
-     viewForTableColumn:(NSTableColumn *)tableColumn
-                   item:(id)item {
-    NSTableCellView *view = nil;
-    if ([[item identifier] isEqualToString:@"header"]) {
-        view = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
-    } else {
-        view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
-        [[view imageView] setImage:[item icon]];
-    }
-    [[view textField] setStringValue:[item title]];
-    return view;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
-{
-    if ([outlineView parentForItem:item]) {
-        return YES;
-    }
-    return NO;
-}
-
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification
-{
-    NSIndexSet *selectedIndexes = [sourceListOutlineView selectedRowIndexes];
-    if (selectedIndexes.count == 0) {
-        detailPanel.hidden = YES;
-        [self->tasksRefersh invalidate];
-        self->tasksRefersh = nil;
-        return;
-    }
-
-    detailPanel.hidden = NO;
-    NSUInteger index = selectedIndexes.firstIndex - 1; // header
-    
-    self.device = (XRRemoteDevice*)self.devices[index];
-    self->tasksRefersh = [NSTimer scheduledTimerWithTimeInterval:5.0
-                                                          target:self
-                                                        selector:@selector(ps)
-                                                        userInfo:nil
-                                                         repeats:YES];
-    [self ps];
-    [self ls];
-}
+//- (void)outlineViewSelectionDidChange:(NSNotification *)notification
+//{
+//    NSIndexSet *selectedIndexes = [sourceListOutlineView selectedRowIndexes];
+//    if (selectedIndexes.count == 0) {
+//        detailPanel.hidden = YES;
+//        [self->tasksRefersh invalidate];
+//        self->tasksRefersh = nil;
+//        return;
+//    }
+//
+//    detailPanel.hidden = NO;
+//    NSUInteger index = selectedIndexes.firstIndex - 1; // header
+//
+//    self.device = (XRRemoteDevice*)self.devices[index];
+//    self->tasksRefersh = [NSTimer scheduledTimerWithTimeInterval:5.0
+//                                                          target:self
+//                                                        selector:@selector(ps)
+//                                                        userInfo:nil
+//                                                         repeats:YES];
+//    [self ps];
+//    [self ls];
+//}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];

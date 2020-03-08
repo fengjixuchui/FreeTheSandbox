@@ -17,6 +17,10 @@
 		9275109123FA9E6D0001FCEF /* TasksListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109023FA9E6D0001FCEF /* TasksListDelegate.m */; };
 		9275109623FAD13B0001FCEF /* FileSystemTreeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */; };
 		9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109823FAD1930001FCEF /* FileSystemItem.m */; };
+		AA52D05A2415201900183E2A /* DevicesPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52D0592415201900183E2A /* DevicesPopUpButton.m */; };
+		AA52D05D24152CE700183E2A /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52D05C24152CE700183E2A /* WindowController.m */; };
+		AADFFC5924153AF700C8524E /* TaskListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AADFFC5824153AF700C8524E /* TaskListView.m */; };
+		AADFFC6524154D3D00C8524E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AADFFC6424154D3D00C8524E /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +41,18 @@
 		9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceSourceItem.m; sourceTree = "<group>"; };
 		9275108F23FA9E6D0001FCEF /* TasksListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasksListDelegate.h; sourceTree = "<group>"; };
 		9275109023FA9E6D0001FCEF /* TasksListDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasksListDelegate.m; sourceTree = "<group>"; };
-		9275109323FACCF90001FCEF /* XRRemoteDevice+XRRemoteDevice_FileSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XRRemoteDevice+XRRemoteDevice_FileSystem.h"; sourceTree = "<group>"; };
 		9275109423FAD13B0001FCEF /* FileSystemTreeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemTreeDelegate.h; sourceTree = "<group>"; };
 		9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemTreeDelegate.m; sourceTree = "<group>"; };
 		9275109723FAD1930001FCEF /* FileSystemItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemItem.h; sourceTree = "<group>"; };
 		9275109823FAD1930001FCEF /* FileSystemItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemItem.m; sourceTree = "<group>"; };
+		AA52D0582415201900183E2A /* DevicesPopUpButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicesPopUpButton.h; sourceTree = "<group>"; };
+		AA52D0592415201900183E2A /* DevicesPopUpButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicesPopUpButton.m; sourceTree = "<group>"; };
+		AA52D05B24152CE700183E2A /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		AA52D05C24152CE700183E2A /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		AADFFC5724153AF700C8524E /* TaskListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskListView.h; sourceTree = "<group>"; };
+		AADFFC5824153AF700C8524E /* TaskListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskListView.m; sourceTree = "<group>"; };
+		AADFFC6324154D3200C8524E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		AADFFC6424154D3D00C8524E /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,8 @@
 				9275106F23F99EEB0001FCEF /* AppDelegate.m */,
 				9275107123F99EEB0001FCEF /* ViewController.h */,
 				9275107223F99EEB0001FCEF /* ViewController.m */,
+				AA52D05B24152CE700183E2A /* WindowController.h */,
+				AA52D05C24152CE700183E2A /* WindowController.m */,
 				9275107423F99EEE0001FCEF /* Assets.xcassets */,
 				9275107623F99EEE0001FCEF /* Main.storyboard */,
 				9275107923F99EEE0001FCEF /* Info.plist */,
@@ -88,7 +101,8 @@
 				9275107C23F99EEE0001FCEF /* FreeTheSandbox.entitlements */,
 				9275108723FA55C40001FCEF /* Instruments.h */,
 				9275108823FA55C40001FCEF /* Instruments.m */,
-				9275109323FACCF90001FCEF /* XRRemoteDevice+XRRemoteDevice_FileSystem.h */,
+				AADFFC6324154D3200C8524E /* Constants.h */,
+				AADFFC6424154D3D00C8524E /* Constants.m */,
 			);
 			path = FreeTheSandbox;
 			sourceTree = "<group>";
@@ -108,6 +122,10 @@
 				9275109023FA9E6D0001FCEF /* TasksListDelegate.m */,
 				9275109423FAD13B0001FCEF /* FileSystemTreeDelegate.h */,
 				9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */,
+				AA52D0582415201900183E2A /* DevicesPopUpButton.h */,
+				AA52D0592415201900183E2A /* DevicesPopUpButton.m */,
+				AADFFC5724153AF700C8524E /* TaskListView.h */,
+				AADFFC5824153AF700C8524E /* TaskListView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,10 +214,14 @@
 				9275109623FAD13B0001FCEF /* FileSystemTreeDelegate.m in Sources */,
 				9275107323F99EEB0001FCEF /* ViewController.m in Sources */,
 				9275107B23F99EEE0001FCEF /* main.m in Sources */,
+				AADFFC5924153AF700C8524E /* TaskListView.m in Sources */,
+				AA52D05A2415201900183E2A /* DevicesPopUpButton.m in Sources */,
+				AA52D05D24152CE700183E2A /* WindowController.m in Sources */,
 				9275109123FA9E6D0001FCEF /* TasksListDelegate.m in Sources */,
 				9275108D23FA5D8C0001FCEF /* DeviceSourceItem.m in Sources */,
 				9275107023F99EEB0001FCEF /* AppDelegate.m in Sources */,
 				9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */,
+				AADFFC6524154D3D00C8524E /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

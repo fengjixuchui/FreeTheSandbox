@@ -7,7 +7,7 @@
 //
 
 #import "FileSystemTreeDelegate.h"
-#import "XRRemoteDevice+XRRemoteDevice_FileSystem.h"
+#import "Instruments.h"
 
 @implementation FileSystemTreeDelegate
 
