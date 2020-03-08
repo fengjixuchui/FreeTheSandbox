@@ -12,12 +12,17 @@
 
 @implementation TaskListView
 
-- (void)awakeFromNib {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceSelected:) name:kSignalDeviceSelected object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTerminateTask:) name:kSignalTerminateProcess object:nil];
-
-    self.dataSource = self;
-    self.delegate = self;
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceSelected:) name:kSignalDeviceSelected object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTerminateTask:) name:kSignalTerminateProcess object:nil];
+        
+        self.dataSource = self;
+        self.delegate = self;
+    }
+    return self;
 }
 
 - (void)onDeviceSelected:(NSNotification *)notification {
@@ -27,7 +32,7 @@
 }
 
 - (void)refresh {
-    showSnipper(YES);
+    showSpinner(YES);
     [self performSelectorInBackground:@selector(fetch) withObject:nil];
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refresh) object:nil];
@@ -45,7 +50,7 @@
 
     [self reloadData];
     [self selectRowIndexes:[indexes copy] byExtendingSelection:NO];
-    showSnipper(NO);
+    showSpinner(NO);
 }
 
 - (void)drawRect:(NSRect)dirtyRect {

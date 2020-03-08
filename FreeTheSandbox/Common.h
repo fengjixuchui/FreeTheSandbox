@@ -18,6 +18,6 @@ FOUNDATION_EXPORT NSString *const kSignalTerminateProcess;
 FOUNDATION_EXPORT NSString *const kSignalShowLoading;
 
 
-void showSnipper(BOOL state);
+void showSpinner(BOOL state);
 
 #endif /* Constants_h */

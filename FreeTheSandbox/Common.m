@@ -15,6 +15,6 @@ NSString *const kSignalTerminateProcess = @"TERMINATE_TASK";
 
 NSString *const kSignalShowLoading = @"SHOW_LOADING";
 
-void showSnipper(BOOL state) {
+void showSpinner(BOOL state) {
     [[NSNotificationCenter defaultCenter] postNotificationName:kSignalShowLoading object:[NSNumber numberWithBool:state]];
 }

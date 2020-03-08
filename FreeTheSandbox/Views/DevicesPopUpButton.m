@@ -11,9 +11,17 @@
 
 @implementation DevicesPopUpButton
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceChanged) name:kSignalDeviceListChanged object:nil];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [self refresh];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceChanged) name:kSignalDeviceListChanged object:nil];
 }
 
 - (void)onDeviceChanged {
@@ -33,11 +41,11 @@
         [[self lastItem] setImage:device.downsampledDeviceImage];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:kSignalDeviceSelected object:self.selected];
-    showSnipper(NO);
+    showSpinner(NO);
 }
 
 - (void)refresh {
-    showSnipper(YES);
+    showSpinner(YES);
     [self performSelectorInBackground:@selector(fetch) withObject:nil];
 }
 
