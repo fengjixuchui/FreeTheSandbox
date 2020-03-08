@@ -16,6 +16,8 @@
 		9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109823FAD1930001FCEF /* FileSystemItem.m */; };
 		AA52D05A2415201900183E2A /* DevicesPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52D0592415201900183E2A /* DevicesPopUpButton.m */; };
 		AA52D05D24152CE700183E2A /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52D05C24152CE700183E2A /* WindowController.m */; };
+		AACB6F3924156A69007FFEE6 /* ps.png in Resources */ = {isa = PBXBuildFile; fileRef = AACB6F3824156A69007FFEE6 /* ps.png */; };
+		AACB6F3B24156A6F007FFEE6 /* files.png in Resources */ = {isa = PBXBuildFile; fileRef = AACB6F3A24156A6F007FFEE6 /* files.png */; };
 		AADFFC5924153AF700C8524E /* TaskListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AADFFC5824153AF700C8524E /* TaskListView.m */; };
 		AADFFC6524154D3D00C8524E /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = AADFFC6424154D3D00C8524E /* Common.m */; };
 		AAF64C7A24155974009FCBA8 /* FileSystemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF64C7924155974009FCBA8 /* FileSystemView.m */; };
@@ -41,6 +43,8 @@
 		AA52D0592415201900183E2A /* DevicesPopUpButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicesPopUpButton.m; sourceTree = "<group>"; };
 		AA52D05B24152CE700183E2A /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		AA52D05C24152CE700183E2A /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		AACB6F3824156A69007FFEE6 /* ps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ps.png; sourceTree = "<group>"; };
+		AACB6F3A24156A6F007FFEE6 /* files.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = files.png; sourceTree = "<group>"; };
 		AADFFC5724153AF700C8524E /* TaskListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskListView.h; sourceTree = "<group>"; };
 		AADFFC5824153AF700C8524E /* TaskListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskListView.m; sourceTree = "<group>"; };
 		AADFFC6324154D3200C8524E /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		9275106223F99EEB0001FCEF = {
 			isa = PBXGroup;
 			children = (
+				AACB6F3A24156A6F007FFEE6 /* files.png */,
+				AACB6F3824156A69007FFEE6 /* ps.png */,
 				9275106D23F99EEB0001FCEF /* FreeTheSandbox */,
 				9275106C23F99EEB0001FCEF /* Products */,
 			);
@@ -189,7 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9275107523F99EEE0001FCEF /* Assets.xcassets in Resources */,
+				AACB6F3924156A69007FFEE6 /* ps.png in Resources */,
 				9275107823F99EEE0001FCEF /* Main.storyboard in Resources */,
+				AACB6F3B24156A6F007FFEE6 /* files.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
