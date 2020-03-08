@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong) NSArray<PFTProcess*> *data;
 @property (strong) XRRemoteDevice * _Nullable device;
-@property (strong) NSTimer *timer;
 
 @end
 

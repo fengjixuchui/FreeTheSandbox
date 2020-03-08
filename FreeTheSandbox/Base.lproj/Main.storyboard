@@ -751,11 +751,19 @@ CA
                                         <action selector="onEndTask:" target="B8D-0N-5wS" id="IiF-pw-Vq3"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="66F08381-16CB-4FDD-A65F-7C7259B64CC8" label="Custom View" paletteLabel="Custom View" tag="-1" sizingBehavior="auto" id="EMj-He-1QI">
+                                    <nil key="toolTip"/>
+                                    <progressIndicator key="view" wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" id="y7q-tX-Tfb">
+                                        <rect key="frame" x="30" y="14" width="16" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </progressIndicator>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Y8h-9K-Nfh"/>
                                 <toolbarItem reference="T6O-FR-3Zc"/>
                                 <toolbarItem reference="udd-gP-UPI"/>
+                                <toolbarItem reference="EMj-He-1QI"/>
                                 <toolbarItem reference="Hmk-s7-CAE"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -766,6 +774,7 @@ CA
                     <connections>
                         <outlet property="devicesMenu" destination="rH6-6C-Lkp" id="CKd-yS-6A4"/>
                         <outlet property="panels" destination="IQv-IB-iLA" id="RSA-bm-49p"/>
+                        <outlet property="spinner" destination="y7q-tX-Tfb" id="tRQ-FL-ej0"/>
                         <outlet property="tabsSegment" destination="sfp-5X-DT9" id="Waq-AR-pMY"/>
                         <outlet property="terminateButton" destination="41H-dd-bIQ" id="bDQ-tP-Fp4"/>
                         <segue destination="ppM-CO-5f6" kind="relationship" relationship="window.shadowedContentViewController" id="l41-ZJ-3n6"/>

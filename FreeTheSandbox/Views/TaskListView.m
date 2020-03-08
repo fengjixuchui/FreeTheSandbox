@@ -8,11 +8,9 @@
 
 #import "TaskListView.h"
 #import "WindowController.h"
-#import "Constants.h"
+#import "Common.h"
 
 @implementation TaskListView
-
-@synthesize timer;
 
 - (void)awakeFromNib {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceSelected:) name:kSignalDeviceSelected object:nil];
@@ -29,8 +27,11 @@
 }
 
 - (void)refresh {
+    showSnipper(YES);
     [self performSelectorInBackground:@selector(fetch) withObject:nil];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refresh) userInfo:nil repeats:NO];
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refresh) object:nil];
+    [self performSelector:@selector(refresh) withObject:nil afterDelay:3.0];
 }
 
 - (void)fetch {
@@ -44,6 +45,7 @@
 
     [self reloadData];
     [self selectRowIndexes:[indexes copy] byExtendingSelection:NO];
+    showSnipper(NO);
 }
 
 - (void)drawRect:(NSRect)dirtyRect {

@@ -14,9 +14,9 @@
             filePath = "FreeTheSandbox/WindowController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-onEndTask:"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-onSelectDevice:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

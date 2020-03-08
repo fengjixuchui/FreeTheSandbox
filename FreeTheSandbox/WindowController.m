@@ -8,7 +8,7 @@
 
 #import "WindowController.h"
 #import "DevicesPopUpButton.h"
-#import "Constants.h"
+#import "Common.h"
 
 @interface WindowController ()
 {
@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSSegmentedControl *tabsSegment;
 @property (weak) IBOutlet NSButton *terminateButton;
 @property (weak) IBOutlet DevicesPopUpButton *devicesMenu;
+@property (weak) IBOutlet NSProgressIndicator *spinner;
 
 @property (weak, nonatomic, readonly) NSTabViewController *content;
 @end
@@ -37,12 +38,19 @@
         [self.tabsSegment setLabel:item.label forSegment:idx];
     }];
     self.terminateButton.hidden = YES;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleTerminateButton:) name:kSignalProcessSelected object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleSpinner:) name:kSignalShowLoading object:nil];
 }
 
 - (void)toggleTerminateButton:(NSNotification *)notification {
     NSNumber *state = (NSNumber *)notification.object;
     self.terminateButton.hidden = !(self->hasProcessSelected = state.boolValue);
+}
+
+- (void)toggleSpinner:(NSNotification *)notification {
+    NSNumber *state = (NSNumber *)notification.object;
+    self.spinner.hidden = !state.boolValue;
 }
 
 - (NSTabViewController *)content {

@@ -7,7 +7,7 @@
 //
 
 #import "DevicesPopUpButton.h"
-#import "Constants.h"
+#import "Common.h"
 
 @implementation DevicesPopUpButton
 
@@ -33,9 +33,11 @@
         [[self lastItem] setImage:device.downsampledDeviceImage];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:kSignalDeviceSelected object:self.selected];
+    showSnipper(NO);
 }
 
 - (void)refresh {
+    showSnipper(YES);
     [self performSelectorInBackground:@selector(fetch) withObject:nil];
 }
 

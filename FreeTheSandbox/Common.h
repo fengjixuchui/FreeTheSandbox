@@ -15,4 +15,9 @@ FOUNDATION_EXPORT NSString *const kSignalDeviceSelected;
 FOUNDATION_EXPORT NSString *const kSignalProcessSelected;
 FOUNDATION_EXPORT NSString *const kSignalTerminateProcess;
 
+FOUNDATION_EXPORT NSString *const kSignalShowLoading;
+
+
+void showSnipper(BOOL state);
+
 #endif /* Constants_h */
