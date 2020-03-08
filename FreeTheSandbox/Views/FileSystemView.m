@@ -30,6 +30,7 @@
 - (void)onDeviceSelected:(NSNotification *)notification {
     XRRemoteDevice *device = notification.object;
     self.device = device;
+    self.hidden = !device;
     
     // throttle
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(expandItem:) object:self.tree.firstObject];

@@ -28,6 +28,7 @@
 - (void)onDeviceSelected:(NSNotification *)notification {
     XRRemoteDevice *device = notification.object;
     self.device = device;
+    self.hidden = !device;
     [self refresh];
 }
 

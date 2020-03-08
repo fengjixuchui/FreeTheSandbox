@@ -54,7 +54,9 @@
 }
 
 - (XRDevice *) selected {
-    return self.devices[self.indexOfSelectedItem];
+    NSInteger i = self.indexOfSelectedItem;
+    if (i < 0 || i > self.devices.count - 1) return nil;
+    return self.devices[i];
 }
 
 @end
