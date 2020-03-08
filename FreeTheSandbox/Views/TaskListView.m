@@ -12,9 +12,12 @@
 
 @implementation TaskListView
 
+@synthesize timer;
+
 - (void)awakeFromNib {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceSelected:) name:kSignalDeviceSelected object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTerminateTask:) name:kSignalTerminateProcess object:nil];
+
     self.dataSource = self;
     self.delegate = self;
 }
@@ -22,8 +25,25 @@
 - (void)onDeviceSelected:(NSNotification *)notification {
     XRRemoteDevice *device = notification.object;
     self.device = device;
-    self.data = [device runningProcesses];
+    [self refresh];
+}
+
+- (void)refresh {
+    [self performSelectorInBackground:@selector(fetch) withObject:nil];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(refresh) userInfo:nil repeats:NO];
+}
+
+- (void)fetch {
+    self.data = [self.device runningProcesses];
+    [self performSelectorOnMainThread:@selector(update) withObject:nil waitUntilDone:NO];
+}
+
+- (void)update {
+    NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+    [indexes addIndex:self.selectedRow];
+
     [self reloadData];
+    [self selectRowIndexes:[indexes copy] byExtendingSelection:NO];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -67,6 +87,12 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
     NSNumber *state = [NSNumber numberWithBool:(self.selectedRowIndexes.count > 0)];
     [[NSNotificationCenter defaultCenter] postNotificationName:kSignalProcessSelected object:state];
+}
+
+- (void)onTerminateTask:(NSNotification *)notificaiton {
+    PFTProcess *task = self.data[self.selectedRow];
+    int pid = task.processIdentifier;
+    [self.device terminateProcess:[NSNumber numberWithInt:pid]];
 }
 
 @end

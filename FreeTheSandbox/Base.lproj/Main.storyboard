@@ -747,6 +747,9 @@ CA
 </string>
                                         </buttonCell>
                                     </button>
+                                    <connections>
+                                        <action selector="onEndTask:" target="B8D-0N-5wS" id="IiF-pw-Vq3"/>
+                                    </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>

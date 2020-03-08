@@ -13,9 +13,7 @@
 
 - (void)awakeFromNib {
     [self refresh];
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:kSignalDeviceSelected object:self.selected];
-    [center addObserver:self selector:@selector(onDeviceChanged) name:kSignalDeviceListChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceChanged) name:kSignalDeviceListChanged object:nil];
 }
 
 - (void)onDeviceChanged {
@@ -23,13 +21,22 @@
     [self performSelector:@selector(refresh) withObject:nil afterDelay:0.5];
 }
 
-- (void)refresh {
-    Instruments *manager = [Instruments shared];
+- (void)fetch {
+    self.devices = [[Instruments shared] devices];
+    [self performSelectorOnMainThread:@selector(update) withObject:nil waitUntilDone:NO];
+}
+
+- (void)update {
     [self removeAllItems];
-    for (XRDevice *device in [manager devices]) {
+    for (XRDevice *device in self.devices) {
         [self addItemWithTitle:device.deviceDisplayName];
         [[self lastItem] setImage:device.downsampledDeviceImage];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kSignalDeviceSelected object:self.selected];
+}
+
+- (void)refresh {
+    [self performSelectorInBackground:@selector(fetch) withObject:nil];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -37,7 +44,7 @@
 }
 
 - (XRDevice *) selected {
-    return [[Instruments shared] devices][self.indexOfSelectedItem];
+    return self.devices[self.indexOfSelectedItem];
 }
 
 @end

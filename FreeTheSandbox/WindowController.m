@@ -26,7 +26,7 @@
 - (IBAction)onSwitch:(id)sender {
     if (sender != self.tabsSegment) return;
     self.content.selectedTabViewItemIndex = self.tabsSegment.selectedSegment;
-    self.terminateButton.hidden = !(self.tabsSegment.selectedSegment == 0 && self->hasProcessSelected);    
+    self.terminateButton.hidden = !(self.tabsSegment.selectedSegment == 0 && self->hasProcessSelected);
 }
 
 - (void)windowDidLoad {
@@ -52,6 +52,17 @@
 - (IBAction)onSelectDevice:(id)sender {
     if (sender != self.devicesMenu) return;
     [[NSNotificationCenter defaultCenter] postNotificationName:kSignalDeviceSelected object:self.devicesMenu.selected];
+}
+
+- (IBAction)onEndTask:(id)sender {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Task Manager"];
+    [alert setInformativeText:@"Are you sure to terminate the process?"];
+    [alert addButtonWithTitle:@"Sure"];
+    [alert addButtonWithTitle:@"Cancel"];
+    if ([alert runModal] == NSAlertFirstButtonReturn) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kSignalTerminateProcess object:nil];
+    }
 }
 
 @end

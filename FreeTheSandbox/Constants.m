@@ -10,4 +10,5 @@
 
 
 NSString *const kSignalDeviceSelected = @"DEVICE_SELECTED";
-NSString *const kSignalProcessSelected= @"PROCESS_SELECTED";
+NSString *const kSignalProcessSelected = @"PROCESS_SELECTED";
+NSString *const kSignalTerminateProcess = @"TERMINATE_TASK";

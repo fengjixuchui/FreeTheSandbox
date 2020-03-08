@@ -13,5 +13,6 @@
 
 FOUNDATION_EXPORT NSString *const kSignalDeviceSelected;
 FOUNDATION_EXPORT NSString *const kSignalProcessSelected;
+FOUNDATION_EXPORT NSString *const kSignalTerminateProcess;
 
 #endif /* Constants_h */
