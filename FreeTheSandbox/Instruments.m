@@ -7,9 +7,19 @@
 //
 
 #import "Instruments.h"
-#import "XRRemoteDevice+XRRemoteDevice_FileSystem.h"
+
+NSString *const kSignalDeviceListChanged = @"DEVICES_CHANGED";
 
 @implementation Instruments
+
++ (id)shared {
+    static Instruments *sharedInstruments = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstruments = [[self alloc] init];
+    });
+    return sharedInstruments;
+}
 
 /*
  * It's possible to port this shit to libimobiledevice
@@ -27,15 +37,25 @@
 }
 
 - (NSArray <XRRemoteDevice*>*) devices {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"platformName == 'iPhoneOS' "];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"platformName == 'iPhoneOS' AND isOnLine == YES"];
     NSArray *devices = [[XRDeviceDiscovery availableDevices] filteredArrayUsingPredicate:predicate];
     return devices;
 }
 
-- (void) watch {
-// TODO: watch for devices
-//    [XRDeviceDiscovery registerDeviceObserver:];
-//    [XRDeviceDiscovery startListeningForDevices];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.discovery = [[XRDeviceDiscovery alloc] init];
+        [XRDeviceDiscovery registerDeviceObserver:self];
+        [self.discovery startListeningForDevices];
+    }
+    return self;
+}
+
+- (void)handleDeviceNotification:(XRDevice *)device {
+    if ([device isKindOfClass:NSClassFromString(@"XRMobileDevice")]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kSignalDeviceListChanged object:self];
+    }
 }
 
 @end
@@ -51,4 +71,18 @@
     }];
 }
 
+@end
+
+@implementation PFTProcess (NSKeyValueCoding)
+- (id)valueForKey:(NSString *)key {
+    if ([key isEqualToString:@"pid"]) {
+        return [NSNumber numberWithInt:self.processIdentifier];
+    } else if ([key isEqualToString:@"name"]) {
+        return self.processName;
+    } else if ([key isEqualToString:@"path"]) {
+        return self.executablePath;
+    }
+
+    return nil;
+}
 @end

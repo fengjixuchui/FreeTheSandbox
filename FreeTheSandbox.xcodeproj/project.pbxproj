@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		9275107023F99EEB0001FCEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275106F23F99EEB0001FCEF /* AppDelegate.m */; };
-		9275107323F99EEB0001FCEF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275107223F99EEB0001FCEF /* ViewController.m */; };
 		9275107523F99EEE0001FCEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9275107423F99EEE0001FCEF /* Assets.xcassets */; };
 		9275107823F99EEE0001FCEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9275107623F99EEE0001FCEF /* Main.storyboard */; };
 		9275107B23F99EEE0001FCEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275107A23F99EEE0001FCEF /* main.m */; };
 		9275108923FA55C40001FCEF /* Instruments.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275108823FA55C40001FCEF /* Instruments.m */; };
 		9275108D23FA5D8C0001FCEF /* DeviceSourceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */; };
-		9275109123FA9E6D0001FCEF /* TasksListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109023FA9E6D0001FCEF /* TasksListDelegate.m */; };
-		9275109623FAD13B0001FCEF /* FileSystemTreeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */; };
 		9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275109823FAD1930001FCEF /* FileSystemItem.m */; };
+		AA52D05A2415201900183E2A /* DevicesPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52D0592415201900183E2A /* DevicesPopUpButton.m */; };
+		AA52D05D24152CE700183E2A /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52D05C24152CE700183E2A /* WindowController.m */; };
+		AADFFC5924153AF700C8524E /* TaskListView.m in Sources */ = {isa = PBXBuildFile; fileRef = AADFFC5824153AF700C8524E /* TaskListView.m */; };
+		AADFFC6524154D3D00C8524E /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = AADFFC6424154D3D00C8524E /* Common.m */; };
+		AAF64C7A24155974009FCBA8 /* FileSystemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF64C7924155974009FCBA8 /* FileSystemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9275106B23F99EEB0001FCEF /* FreeTheSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeTheSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9275106E23F99EEB0001FCEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9275106F23F99EEB0001FCEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9275107123F99EEB0001FCEF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9275107223F99EEB0001FCEF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9275107423F99EEE0001FCEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9275107723F99EEE0001FCEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9275107923F99EEE0001FCEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,13 +35,18 @@
 		9275108A23FA56650001FCEF /* InternalApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternalApi.h; sourceTree = "<group>"; };
 		9275108B23FA5D8C0001FCEF /* DeviceSourceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceSourceItem.h; sourceTree = "<group>"; };
 		9275108C23FA5D8C0001FCEF /* DeviceSourceItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceSourceItem.m; sourceTree = "<group>"; };
-		9275108F23FA9E6D0001FCEF /* TasksListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasksListDelegate.h; sourceTree = "<group>"; };
-		9275109023FA9E6D0001FCEF /* TasksListDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasksListDelegate.m; sourceTree = "<group>"; };
-		9275109323FACCF90001FCEF /* XRRemoteDevice+XRRemoteDevice_FileSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XRRemoteDevice+XRRemoteDevice_FileSystem.h"; sourceTree = "<group>"; };
-		9275109423FAD13B0001FCEF /* FileSystemTreeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemTreeDelegate.h; sourceTree = "<group>"; };
-		9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemTreeDelegate.m; sourceTree = "<group>"; };
 		9275109723FAD1930001FCEF /* FileSystemItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemItem.h; sourceTree = "<group>"; };
 		9275109823FAD1930001FCEF /* FileSystemItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemItem.m; sourceTree = "<group>"; };
+		AA52D0582415201900183E2A /* DevicesPopUpButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicesPopUpButton.h; sourceTree = "<group>"; };
+		AA52D0592415201900183E2A /* DevicesPopUpButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicesPopUpButton.m; sourceTree = "<group>"; };
+		AA52D05B24152CE700183E2A /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		AA52D05C24152CE700183E2A /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		AADFFC5724153AF700C8524E /* TaskListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskListView.h; sourceTree = "<group>"; };
+		AADFFC5824153AF700C8524E /* TaskListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskListView.m; sourceTree = "<group>"; };
+		AADFFC6324154D3200C8524E /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		AADFFC6424154D3D00C8524E /* Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		AAF64C7824155974009FCBA8 /* FileSystemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileSystemView.h; sourceTree = "<group>"; };
+		AAF64C7924155974009FCBA8 /* FileSystemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileSystemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +84,8 @@
 				9275108323FA55000001FCEF /* Classdump */,
 				9275106E23F99EEB0001FCEF /* AppDelegate.h */,
 				9275106F23F99EEB0001FCEF /* AppDelegate.m */,
-				9275107123F99EEB0001FCEF /* ViewController.h */,
-				9275107223F99EEB0001FCEF /* ViewController.m */,
+				AA52D05B24152CE700183E2A /* WindowController.h */,
+				AA52D05C24152CE700183E2A /* WindowController.m */,
 				9275107423F99EEE0001FCEF /* Assets.xcassets */,
 				9275107623F99EEE0001FCEF /* Main.storyboard */,
 				9275107923F99EEE0001FCEF /* Info.plist */,
@@ -88,7 +93,8 @@
 				9275107C23F99EEE0001FCEF /* FreeTheSandbox.entitlements */,
 				9275108723FA55C40001FCEF /* Instruments.h */,
 				9275108823FA55C40001FCEF /* Instruments.m */,
-				9275109323FACCF90001FCEF /* XRRemoteDevice+XRRemoteDevice_FileSystem.h */,
+				AADFFC6324154D3200C8524E /* Common.h */,
+				AADFFC6424154D3D00C8524E /* Common.m */,
 			);
 			path = FreeTheSandbox;
 			sourceTree = "<group>";
@@ -104,10 +110,12 @@
 		9275108E23FA9E5B0001FCEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9275108F23FA9E6D0001FCEF /* TasksListDelegate.h */,
-				9275109023FA9E6D0001FCEF /* TasksListDelegate.m */,
-				9275109423FAD13B0001FCEF /* FileSystemTreeDelegate.h */,
-				9275109523FAD13B0001FCEF /* FileSystemTreeDelegate.m */,
+				AA52D0582415201900183E2A /* DevicesPopUpButton.h */,
+				AA52D0592415201900183E2A /* DevicesPopUpButton.m */,
+				AADFFC5724153AF700C8524E /* TaskListView.h */,
+				AADFFC5824153AF700C8524E /* TaskListView.m */,
+				AAF64C7824155974009FCBA8 /* FileSystemView.h */,
+				AAF64C7924155974009FCBA8 /* FileSystemView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,14 +200,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF64C7A24155974009FCBA8 /* FileSystemView.m in Sources */,
 				9275108923FA55C40001FCEF /* Instruments.m in Sources */,
-				9275109623FAD13B0001FCEF /* FileSystemTreeDelegate.m in Sources */,
-				9275107323F99EEB0001FCEF /* ViewController.m in Sources */,
 				9275107B23F99EEE0001FCEF /* main.m in Sources */,
-				9275109123FA9E6D0001FCEF /* TasksListDelegate.m in Sources */,
+				AADFFC5924153AF700C8524E /* TaskListView.m in Sources */,
+				AA52D05A2415201900183E2A /* DevicesPopUpButton.m in Sources */,
+				AA52D05D24152CE700183E2A /* WindowController.m in Sources */,
 				9275108D23FA5D8C0001FCEF /* DeviceSourceItem.m in Sources */,
 				9275107023F99EEB0001FCEF /* AppDelegate.m in Sources */,
 				9275109923FAD1930001FCEF /* FileSystemItem.m in Sources */,
+				AADFFC6524154D3D00C8524E /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Instruments : NSObject
+FOUNDATION_EXPORT NSString *const kSignalDeviceListChanged;
+
+@interface Instruments : NSObject <XRDeviceObserver>
+@property (atomic, retain) XRDeviceDiscovery *discovery;
+
 - (NSArray <XRRemoteDevice*>*) devices;
-- (void) watch;
++ (instancetype)shared;
+@end
+
+@interface XRRemoteDevice (FileSystem)
+- (void)listing:(NSString *)path callback:(void (^)(NSArray *))callback;
+@end
+
+@interface PFTProcess (NSKeyValueCoding)
+- (id)valueForKey:(NSString *)key;
 @end
 
 NS_ASSUME_NONNULL_END

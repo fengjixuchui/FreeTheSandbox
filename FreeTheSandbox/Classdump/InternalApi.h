@@ -81,6 +81,9 @@
 @property(copy) NSImage *deviceSmallRepresentationIcon;
 @end
 
+@interface XRMobileDevice: XRDevice
+@end
+
 @interface XRRemoteDevice : XRDevice
 @property(retain) DTXChannel *companionControlChannel;
 @property(retain) DTXChannel *applicationChannel;
@@ -253,6 +256,10 @@
 - (id)imageForDeviceType:(id)arg1 deviceColorString:(id)arg2 deviceEnclosureColorString:(id)arg3;
 - (id)imageForDeviceType:(id)arg1;
 
+@end
+
+@protocol XRDeviceObserver <NSObject>
+- (void)handleDeviceNotification:(XRDevice *)arg1;
 @end
 
 #endif /* InternalApi_h */
