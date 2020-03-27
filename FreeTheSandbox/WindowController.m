@@ -45,7 +45,8 @@
 
 - (void)toggleTerminateButton:(NSNotification *)notification {
     NSNumber *state = (NSNumber *)notification.object;
-    self.terminateButton.hidden = !(self->hasProcessSelected = state.boolValue);
+    self->hasProcessSelected = state.boolValue;
+    self.terminateButton.hidden = !(self.tabsSegment.selectedSegment == 0 && self->hasProcessSelected);
 }
 
 - (void)toggleSpinner:(NSNotification *)notification {

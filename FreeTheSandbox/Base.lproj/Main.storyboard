@@ -703,12 +703,12 @@
                                     <popUpButton key="view" verticalHuggingPriority="750" id="rH6-6C-Lkp" customClass="DevicesPopUpButton">
                                         <rect key="frame" x="0.0" y="14" width="100" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <popUpButtonCell key="cell" type="roundTextured" title="Item 1" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="KRU-7I-UuW" id="0hJ-Ms-QdA">
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="KRU-7I-UuW" id="0hJ-Ms-QdA">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="3wz-eq-smX">
                                                 <items>
-                                                    <menuItem title="Item 1" state="on" id="KRU-7I-UuW"/>
+                                                    <menuItem state="on" id="KRU-7I-UuW"/>
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
