@@ -34,7 +34,7 @@
 
 - (void)refresh {
     showSpinner(YES);
-    [self performSelectorInBackground:@selector(fetch) withObject:nil];
+    [self fetch];
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refresh) object:nil];
     [self performSelector:@selector(refresh) withObject:nil afterDelay:3.0];

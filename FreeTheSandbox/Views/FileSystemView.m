@@ -42,7 +42,7 @@
 }
 
 - (void)expandItem:(FileSystemItem *)item {
-    [self performSelectorInBackground:@selector(fetch:) withObject:item];
+    [self fetch:item];
 }
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item

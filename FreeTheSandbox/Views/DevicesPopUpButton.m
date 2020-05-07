@@ -46,7 +46,7 @@
 
 - (void)refresh {
     showSpinner(YES);
-    [self performSelectorInBackground:@selector(fetch) withObject:nil];
+    [self fetch];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
